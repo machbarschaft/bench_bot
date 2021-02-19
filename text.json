@@ -1,0 +1,27 @@
+{
+    "_comment": "The Bot is using html parse mode to send messages. The phrases in this file can be formatted using simple html tags. Details can be found here: https://core.telegram.org/bots/api#updating-messages",
+    "start_message": {
+        "de": "Machbarschaft draag_bank Admin Bot",
+        "en": ""
+    },
+    "group_pinned_message": {
+        "de": "Das ist die Telegram Gruppe für eine <b>draag_bank</b>, ein Projekt von <a href='https://www.machbarschaft.jetzt/bank/'>machbarschaft.jetzt</a>. Wir freuen uns, dass Du hier bist.",
+        "en": ""
+    },
+    "no_admin":{
+        "de": "Der Admin Bot wurde nicht als Gruppen Administrator konfiguriert. Der Benutzer muss noch einmal entfernt und als Administrator hinzugefügt werden.",
+        "en": ""
+    },
+    "welcome_salutation":{
+        "de": "Hallo",
+        "en": "Hello"
+    },
+    "welcome_text": {
+        "de": "schön, dass Du mir auch Online folgen möchtest. Wer ich bin? Ich bin eigentlich nur eine gewöhnliche Bank, die aber eben auch ganz gerne ein wenig unterwegs ist. Wenn Dich also die Lust packt, packe zu und bringe mich an einen Ort, am dem Du verweilen möchtest. Toll wäre es, wenn Du die Position der Bank dann einfach an Telegram sendest in dem Du mit der Gruppe den Standort teilst. Sende für weitere Hilfe einfach /hilfe an die Gruppe.",
+        "en": ""
+    },
+    "last_location": {
+        "de": "Der letzte Standort wurde am [date] um [time] Uhr von [username] eingetragen.",
+        "en": ""
+    }
+}

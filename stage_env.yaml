@@ -1,0 +1,4 @@
+LOG_SEVERITY: DEBUG
+GCP_PROJECT_NAME: mbs-sta-299014
+BOT_TOKEN_ALIAS: bot_token
+BOT_NAME: bench_dev_bot
