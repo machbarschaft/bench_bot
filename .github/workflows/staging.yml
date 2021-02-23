@@ -1,0 +1,34 @@
+# This is the workflow to manually deploy the bot to Google Cloud Functions
+
+name: CI/CD Staging
+
+on:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  deploy:
+    # The job runs on windows
+    name: Deply to Google Gloud Functions
+    runs-on: windows-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out the repository under $GITHUB_WORKSPACE
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Prepare SDK to get firebase credentials
+        uses: google-github-actions/setup-gcloud@v0.2.0
+        with:
+          service_account_key: ${{ secrets.GCLOUD_AUTH }}
+
+      - name: Get firebase credentials
+        run: gsutil cp gs://keystorage-${PROJECT_ID}/credentials.json credentials.json
+
+      - name: Deploy
+        uses: google-github-actions/deploy-cloud-functions@v0.1.2
+        with:
+          
