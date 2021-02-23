@@ -62,8 +62,8 @@ def mbs_bench_bot(request):
 
     my_logger.info('Function execution starts now')
 
-    bot_token = get_secret(os.getenv('GCP_PROJECT_NAME'),
-                           os.getenv('BOT_TOKEN_ALIAS'))
+    bot_token = os.getenv('BOT_TOKEN')
+
 
     my_bot = telegram.Bot(bot_token)
     my_dispatcher = Dispatcher(my_bot, None, workers=0, use_context=True)
@@ -153,8 +153,7 @@ def handler_error(the_update: telegram.update, the_context: telegram.ext.Callbac
     )
 
     # Finally, send the message
-    the_context.bot.send_message(chat_id=int(
-        get_secret(os.getenv('GCP_PROJECT_NAME'), ERROR_CHAT_SECRET)), text=message_text, parse_mode=PARSE_MODE)
+    the_context.bot.send_message(chat_id=int(os.getenv('ERROR_CHAT_ID')), text=message_text, parse_mode=PARSE_MODE)
 
 
 def new_chat_members(the_update: telegram.update, the_context: telegram.ext.CallbackContext) -> None:

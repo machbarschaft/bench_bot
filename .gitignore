@@ -4,3 +4,4 @@ env
 bot_token.txt
 credentials.json
 chat_id.txt
+test_env.yaml

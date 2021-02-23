@@ -11,7 +11,7 @@ on:
 jobs:
   deploy:
     # The job runs on windows
-    name: Deply to Google Gloud Functions
+    name: Deploy to Google Cloud Functions
     runs-on: windows-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -31,4 +31,13 @@ jobs:
       - name: Deploy
         uses: google-github-actions/deploy-cloud-functions@v0.1.2
         with:
+          name: mbs_bench_bot
+          runtime: python37
+          env_vars: LOG_SEVERITY=$LOG_LEVEL, BOT_TOKEN=$BOT_TOKEN, BOT_NAME=$BOT_NAME, ERROR_CHAT_ID=$ERROR_CHAT_ID, GOOGLE_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS
           
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: "credentials.json"
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_API_KEY_STA }}
+          BOT_NAME: "bench_bot_dev"
+          LOG_LEVEL: "DEBUG"
+          ERROR_CHAT_ID: ${{ secrets.ERROR_CHAT_ID }}
