@@ -1,4 +1,0 @@
-LOG_SEVERITY: DEBUG
-GCP_PROJECT_NAME: mbs-bench-dev
-BOT_TOKEN_ALIAS: bot_token
-BOT_NAME: bench_dev_bot
