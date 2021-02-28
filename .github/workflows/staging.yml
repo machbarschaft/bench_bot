@@ -27,6 +27,9 @@ jobs:
           service_account_key: ${{ secrets.GCLOUD_AUTH }}
           export_default_credentials: true
 
+      - name: Activate Cloud Functions API
+        run: gcloud services enable cloudfunctions.googleapis.com
+        
       - name: Get Firebase credentials
         run: gsutil cp gs://keystorage-${{ secrets.PROJECT_ID_STA }}/credentials.json credentials.json
 
