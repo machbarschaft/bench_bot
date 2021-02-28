@@ -29,7 +29,7 @@ jobs:
 
       - name: Activate Cloud Functions API
         run: gcloud services enable cloudfunctions.googleapis.com
-        
+
       - name: Get Firebase credentials
         run: gsutil cp gs://keystorage-${{ secrets.PROJECT_ID_STA }}/credentials.json credentials.json
 
@@ -39,6 +39,7 @@ jobs:
           name: mbs_bench_bot
           runtime: python37
           env_vars: LOG_SEVERITY=$LOG_LEVEL, BOT_TOKEN=$BOT_TOKEN, BOT_NAME=$BOT_NAME, ERROR_CHAT_ID=$ERROR_CHAT_ID, GOOGLE_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS
+          region: europe-west1
           
         env:
           GOOGLE_APPLICATION_CREDENTIALS: "credentials.json"
