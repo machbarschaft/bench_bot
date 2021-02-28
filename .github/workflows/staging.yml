@@ -23,7 +23,7 @@ jobs:
       - name: Prepare SDK for further steps
         uses: google-github-actions/setup-gcloud@v0.2.0
         with:
-          project-id: ${{ secrets.PROJECT_ID_STA }}
+          project_id: ${PROJECT_ID}
           service_account_key: ${{ secrets.GCLOUD_AUTH }}
           export_default_credentials: true
 
@@ -37,10 +37,10 @@ jobs:
           runtime: python37
           env_vars: LOG_SEVERITY=$LOG_LEVEL, BOT_TOKEN=$BOT_TOKEN, BOT_NAME=$BOT_NAME, ERROR_CHAT_ID=$ERROR_CHAT_ID, GOOGLE_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS
           
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: "credentials.json"
-          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_API_KEY_STA }}
-          BOT_NAME: "bench_bot_dev"
-          LOG_LEVEL: "DEBUG"
-          ERROR_CHAT_ID: ${{ secrets.ERROR_CHAT_ID }}
-          PROJECT_ID: ${{ secrets.PROJECT_ID_STA }}
+    env:
+      GOOGLE_APPLICATION_CREDENTIALS: "credentials.json"
+      BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_API_KEY_STA }}
+      BOT_NAME: "bench_bot_dev"
+      LOG_LEVEL: "DEBUG"
+      ERROR_CHAT_ID: ${{ secrets.ERROR_CHAT_ID }}
+      PROJECT_ID: ${{ secrets.PROJECT_ID_STA }}
