@@ -28,7 +28,7 @@ jobs:
           export_default_credentials: true
 
       - name: Get Firebase credentials
-        run: gsutil cp gs://keystorage-${PROJECT_ID}/credentials.json credentials.json
+        run: gsutil cp gs://keystorage-${{ secrets.PROJECT_ID_STA }}/credentials.json credentials.json
 
       - name: Deploy
         uses: google-github-actions/deploy-cloud-functions@v0.1.2
