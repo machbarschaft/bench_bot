@@ -23,12 +23,12 @@ jobs:
       - name: Prepare SDK for further steps
         uses: google-github-actions/setup-gcloud@v0.2.0
         with:
-          project_id: ${PROJECT_ID}
+          project_id: $PROJECT_ID
           service_account_key: ${{ secrets.GCLOUD_AUTH }}
           export_default_credentials: true
 
       - name: Get Firebase credentials
-        run: gsutil cp gs://keystorage-${PROJECT_ID}/credentials.json credentials.json
+        run: gsutil cp gs://keystorage-$PROJECT_ID/credentials.json credentials.json
 
       - name: Deploy
         uses: google-github-actions/deploy-cloud-functions@v0.1.2
